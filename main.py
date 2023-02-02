@@ -1,17 +1,17 @@
 #Setup grid
-xRows, yColumns = 5, 5
+x, y = 5, 5
+gridline = []
+for i in range(x):
+    gridline.append(0)
 grid = []
-z = []
-for j in range(xRows):
-    z.append(0)
-for i in range(yColumns):
-    grid.append(z)
+for i in range(y):
+    grid.append(list(gridline))
 
 
 def setgridpoint(x, y, value):
-    gridx = grid[x]
-    gridx[y] = value
+    grid[y][x] = value
+    
 
 
-grid[0][0] = 1
+
 print(grid)

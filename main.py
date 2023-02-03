@@ -26,17 +26,12 @@ def move(x, y):
         currentpoint[0] += x
         currentpoint[1] += y
         grid[currentpoint[1]][currentpoint[0]] = 2
-        for i in config.pcmds:
-            if i.coords[1] == currentpoint[1] and i.coords[0] == currentpoint[0]:
-                i.execute()
 def end():
     if currentpoint[0] == endpoint[0] and currentpoint[1] == endpoint[1]:
         return True
     else:
         return False
 
-for i in config.pcmds:
-    setgridpoint(i.coords[0], i.coords[1], 4)
 setgridpoint(startpoint[0], startpoint[1], 1)
 setgridpoint(endpoint[0], endpoint[1], 3)
 grid.reverse()
@@ -49,6 +44,8 @@ grid.reverse()
 from cmd import Cmd
  
 class MyPrompt(Cmd):
+    prompt = 'grdgame -+> '
+
     def do_move(self, inp):
         coords = inp.split()
         x = int(coords[0])

@@ -1,10 +1,14 @@
 from pprint import pprint
+import config
 startpoint = [0, 0]
-currentpoint = [0, 0]
-
-#Setup grid
+currentpoint = startpoint
 x, y = 5, 5
 endpoint = [x-1, y-1]
+startpoint = config.startpoint
+endpoint = config.endpoint
+x = config.x
+y = config.y
+
 gridline = []
 for i in range(x):
     gridline.append(0)
@@ -22,13 +26,17 @@ def move(x, y):
         currentpoint[0] += x
         currentpoint[1] += y
         grid[currentpoint[1]][currentpoint[0]] = 2
-
+        for i in config.pcmds:
+            if i.coords[1] == currentpoint[1] and i.coords[0] == currentpoint[0]:
+                i.execute()
 def end():
     if currentpoint[0] == endpoint[0] and currentpoint[1] == endpoint[1]:
         return True
     else:
         return False
 
+for i in config.pcmds:
+    setgridpoint(i.coords[0], i.coords[1], 4)
 setgridpoint(startpoint[0], startpoint[1], 1)
 setgridpoint(endpoint[0], endpoint[1], 3)
 grid.reverse()
@@ -36,7 +44,7 @@ grid.reverse()
 # 1 =  startpoint
 # 2 =  currentpoint
 # 3 =  endpoint
-# pprint(grid)
+# 4 =  PlantedCmd
 ######################
 from cmd import Cmd
  

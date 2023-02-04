@@ -29,10 +29,7 @@ def end():
     global currentpoint
     global endpoint
     endpoint[1] -= endpoint[1]+endpoint[1]+1 # Fixes the endpoint coordinates to coreespond with the technical grid coordinates.
-    print(currentpoint)
-    print("\n================================\n")
-    print(endpoint)
-    if currentpoint[0] == endpoint[0] and currentpoint[1] == endpoint[1]:
+    if currentpoint == endpoint:
         return True
     else:
         return False

@@ -1,10 +1,8 @@
 from pprint import pprint
 import config
-startpoint = [0, 0]
-currentpoint = startpoint
-x, y = 5, 5
-endpoint = [x-1, y-1]
+import sys
 startpoint = config.startpoint
+currentpoint = startpoint
 endpoint = config.endpoint
 x = config.x
 y = config.y
@@ -26,7 +24,14 @@ def move(x, y):
         currentpoint[0] += x
         currentpoint[1] += y
         grid[currentpoint[1]][currentpoint[0]] = 2
+        print(currentpoint)
 def end():
+    global currentpoint
+    global endpoint
+    endpoint[1] -= endpoint[1]+endpoint[1]+1 # Fixes the endpoint coordinates to coreespond with the technical grid coordinates.
+    print(currentpoint)
+    print("\n================================\n")
+    print(endpoint)
     if currentpoint[0] == endpoint[0] and currentpoint[1] == endpoint[1]:
         return True
     else:
@@ -42,7 +47,6 @@ grid.reverse()
 # 4 =  PlantedCmd
 ######################
 from cmd import Cmd
- 
 class MyPrompt(Cmd):
     prompt = 'grdgame -+> '
 
@@ -54,8 +58,8 @@ class MyPrompt(Cmd):
         pprint(grid)
 
     def do_end(self, inp):
-        end()
-        return True
+        print(end())
+        sys.exit(0)
     def do_pgrid(self, inp):
         pprint(grid)
 ######################

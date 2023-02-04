@@ -7,7 +7,7 @@ This game is a command line game, where you can see a grid of numbers:<br />
 1 =  starting point<br />
 2 =  current point<br />
 3 =  ending point<br />
-To move your current point you have to use the `move` command and supply how many spaces you want to move in the x direction (to the right) and in the y direction (down)
+To move your current point you have to use the `move` command and supply how many spaces you want to move in the x direction (to the right) and in the y direction (up)
 like this: `move 3 2`<br />
 You can also supply negative numbers to move in the opposite direction 
 like this: `move -1 0`<br />

@@ -1,6 +1,7 @@
 # Grdgame
 ![Developer Is From Ukraine](https://img.shields.io/badge/Developer_Is-From_Ukraine-blue?style=plastic&labelColor=gold)
 ![Warning Unfinished](https://img.shields.io/badge/Warning-Unfinished-darkred?style=plastic&labelColor=crimson)
+![Warning Unmaintained](https://img.shields.io/badge/Warning-Unmaintained-darkred?style=plastic&labelColor=crimson)
 
 Grdgame (codenamed langfromnotebook) is a game which was intended to be a programming language, as its name tells you, the ideas for it are in my notebook.
 Grdgame is a challenge for your eyes to find the ending point which is marked 3 and move to it.
